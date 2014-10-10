@@ -7,7 +7,10 @@
 #	- The postgresql database username
 #	- The postgresql database password
 #	- Your Github username
-RUBY_VERSION=2.1.1
+RUBY_VERSION=( $( ruby -v ) )
+RUBY_VERSION=${RUBY_VERSION[1]}
+ar=(${RUBY_VERSION//p/ })
+RUBY_VERSION=${ar[0]}
 
 if [ "$#" -lt 4 ]; then
   echo "ERROR: Please enter 4 command line parameters:"
